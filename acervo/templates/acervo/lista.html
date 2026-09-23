@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h2>Nosso Acervo</h2>
+
+    <form method="get">
+        <input type="text" name="q" placeholder="Buscar por título ou autor..." value="{{ request.GET.q }}">
+        <select name="status">
+            <option value="">Todos os status</option>
+            <option value="disponivel" {% if request.GET.status == 'disponivel' %}selected{% endif %}>Disponível</option>
+            <option value="emprestado" {% if request.GET.status == 'emprestado' %}selected{% endif %}>Emprestado</option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <ul>
+    {% for livro in livros %}
+        <li>{{ livro.titulo }} - Autor: {{ livro.autor.nome }} ({{ livro.ano }})</li>
+    {% empty %}
+        <li>Nenhum resultado encontrado.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
