@@ -1,0 +1,3 @@
+para a feature 1, decidi escolher a busca por titulo e autor combinada com filtro de disponibilidade, pois é uma necessidade real de um sistema de catalogo de biblioteca. logicamente, procurar um livro em um acervo de medio ou grande porte seria impossivel (assim como uma consulta em uma base de dados)
+
+para a feature 2, foi implementada a validação que impede o registro por ano de publicação futuro. se a regra não existisse, erros de digitação poderiam comprometer a linha de código, e por fim, potencialmente a integridade dos dados da biblioteca (e também porque parecia o mais fácil).
